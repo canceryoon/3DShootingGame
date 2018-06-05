@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 3836b06fbcb517844bacd10a51f33828
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bottom
+    100002: pCube1
+    100004: pCube10
+    100006: pCube2
+    100008: pCube3
+    100010: pCube3 1
+    100012: pCube4
+    100014: pCube4 1
+    100016: pCube5
+    100018: pCube5 1
+    100020: pCube6
+    100022: pCube6 1
+    100024: pCube7
+    100026: pCube7 1
+    100028: pCube8
+    100030: pCube8 1
+    100032: pCube9
+    100034: pillar1
+    100036: pillar10
+    100038: pillar11
+    100040: pillar12
+    100042: pillar13
+    100044: pillar14
+    100046: pillar15
+    100048: pillar16
+    100050: pillar17
+    100052: pillar18
+    100054: pillar19
+    100056: pillar2
+    100058: pillar3
+    100060: pillar4
+    100062: pillar5
+    100064: pillar6
+    100066: pillar7
+    100068: pillar8
+    100070: pillar9
+    100072: //RootNode
+    100074: wheel
+    100076: wheel1
+    400000: bottom
+    400002: pCube1
+    400004: pCube10
+    400006: pCube2
+    400008: pCube3
+    400010: pCube3 1
+    400012: pCube4
+    400014: pCube4 1
+    400016: pCube5
+    400018: pCube5 1
+    400020: pCube6
+    400022: pCube6 1
+    400024: pCube7
+    400026: pCube7 1
+    400028: pCube8
+    400030: pCube8 1
+    400032: pCube9
+    400034: pillar1
+    400036: pillar10
+    400038: pillar11
+    400040: pillar12
+    400042: pillar13
+    400044: pillar14
+    400046: pillar15
+    400048: pillar16
+    400050: pillar17
+    400052: pillar18
+    400054: pillar19
+    400056: pillar2
+    400058: pillar3
+    400060: pillar4
+    400062: pillar5
+    400064: pillar6
+    400066: pillar7
+    400068: pillar8
+    400070: pillar9
+    400072: //RootNode
+    400074: wheel
+    400076: wheel1
+    2100000: underwood
+    2100002: horWood
+    2100004: lambert1
+    2100006: vecWood
+    2100008: criWood
+    2300000: bottom
+    2300002: pCube1
+    2300004: pCube10
+    2300006: pCube2
+    2300008: pCube3
+    2300010: pCube3 1
+    2300012: pCube4
+    2300014: pCube4 1
+    2300016: pCube5
+    2300018: pCube5 1
+    2300020: pCube6
+    2300022: pCube6 1
+    2300024: pCube7
+    2300026: pCube7 1
+    2300028: pCube8
+    2300030: pCube8 1
+    2300032: pCube9
+    2300034: pillar1
+    2300036: pillar10
+    2300038: pillar11
+    2300040: pillar12
+    2300042: pillar13
+    2300044: pillar14
+    2300046: pillar15
+    2300048: pillar16
+    2300050: pillar17
+    2300052: pillar18
+    2300054: pillar19
+    2300056: pillar2
+    2300058: pillar3
+    2300060: pillar4
+    2300062: pillar5
+    2300064: pillar6
+    2300066: pillar7
+    2300068: pillar8
+    2300070: pillar9
+    2300072: wheel
+    2300074: wheel1
+    3300000: bottom
+    3300002: pCube1
+    3300004: pCube10
+    3300006: pCube2
+    3300008: pCube3
+    3300010: pCube3 1
+    3300012: pCube4
+    3300014: pCube4 1
+    3300016: pCube5
+    3300018: pCube5 1
+    3300020: pCube6
+    3300022: pCube6 1
+    3300024: pCube7
+    3300026: pCube7 1
+    3300028: pCube8
+    3300030: pCube8 1
+    3300032: pCube9
+    3300034: pillar1
+    3300036: pillar10
+    3300038: pillar11
+    3300040: pillar12
+    3300042: pillar13
+    3300044: pillar14
+    3300046: pillar15
+    3300048: pillar16
+    3300050: pillar17
+    3300052: pillar18
+    3300054: pillar19
+    3300056: pillar2
+    3300058: pillar3
+    3300060: pillar4
+    3300062: pillar5
+    3300064: pillar6
+    3300066: pillar7
+    3300068: pillar8
+    3300070: pillar9
+    3300072: wheel
+    3300074: wheel1
+    4300000: bottom
+    4300002: pillar1
+    4300004: pillar2
+    4300006: pillar3
+    4300008: pillar4
+    4300010: pillar5
+    4300012: pillar6
+    4300014: pillar7
+    4300016: pillar8
+    4300018: pillar9
+    4300020: pillar10
+    4300022: pillar11
+    4300024: pillar12
+    4300026: pillar13
+    4300028: pillar14
+    4300030: pCube1
+    4300032: pCube2
+    4300034: wheel
+    4300036: pCube6
+    4300038: pCube4
+    4300040: pCube5
+    4300042: pCube8
+    4300044: pCube3
+    4300046: pCube7
+    4300048: wheel1
+    4300050: pCube6
+    4300052: pCube4
+    4300054: pCube5
+    4300056: pCube8
+    4300058: pCube3
+    4300060: pCube7
+    4300062: pillar15
+    4300064: pillar16
+    4300066: pCube9
+    4300068: pillar17
+    4300070: pCube10
+    4300072: pillar18
+    4300074: pillar19
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
