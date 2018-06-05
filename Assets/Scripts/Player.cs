@@ -108,7 +108,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("asdfasdf");
         //Move Left / Right
         if (transform.position.x < 6 && Input.GetKey(KeyCode.Z))
         {
