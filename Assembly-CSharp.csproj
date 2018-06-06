@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\bulletBoom.cs" />
+     <Compile Include="Assets\Scripts\endView.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\startView.cs" />
      <Compile Include="Assets\Scripts\target.cs" />

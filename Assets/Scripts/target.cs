@@ -6,7 +6,9 @@ public class target : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        Destroy(gameObject);
+		Variables.scores += 10;
+		Variables.targets += 1;
+		gameObject.SetActive (false);
     }
 
 	// Use this for initialization

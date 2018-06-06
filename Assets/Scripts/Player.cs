@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour
@@ -17,11 +18,18 @@ public class Player : MonoBehaviour
     public GameObject[] targets;
     public GameObject scope;
     public Text stages;
+	public string name;
 
     private int remainBullets;
 
+	void Awake()
+	{
+		name = Variables.playerName;
+		Debug.Log (name);
+	}
+
     void Start()
-    {
+	{
         charCtrl = GetComponent<CharacterController>();
         remainBullets = 6;
         initTargetFalse();
@@ -39,18 +47,6 @@ public class Player : MonoBehaviour
     {
         scope.SetActive(false);
         stages.text = "Stage " + _stage;
-        holdTime();
-    }
-
-    void holdTime()
-    {
-        float tot = 0;
-        while (true)
-        {
-            tot += Time.deltaTime;
-            if (tot >= 1000.0f)
-                break;
-        }
     }
 
     void initTargetFalse()
@@ -61,7 +57,6 @@ public class Player : MonoBehaviour
 
     void initStage(int _stage)
     {
-        stages.text = "";
         for (int i = (_stage-1)<<2; i < (_stage<<2); i++)
             targets[i].SetActive(true);
         scope.SetActive(true);
@@ -105,27 +100,40 @@ public class Player : MonoBehaviour
         }
     }
 
+	void checkStage(int _stage)
+	{
+		if (Variables.targets == (_stage << 2)) 
+		{
+			if (_stage == 3)
+				SceneManager.LoadScene ("GameEndView");
+			else 
+			{
+				stage += 1;
+				printStage (stage);
+				initStage (stage);
+			}
+		}
+			
+	}
+
     // Update is called once per frame
     void Update()
     {
         //Move Left / Right
         if (transform.position.x < 6 && Input.GetKey(KeyCode.Z))
-        {
             transform.position += new Vector3(0.2f, 0.0f, 0.0f);
-        }
         if (transform.position.x > -6 && Input.GetKey(KeyCode.X))
-        {
             transform.position += new Vector3(-0.2f, 0.0f, 0.0f);
-        }
 
         //Rotation 
-        yaw += Input.GetAxis("Mouse X") * 3.0f;
-        pitch += Input.GetAxis("Mouse Y") * 3.0f;
+        yaw += Input.GetAxis("Mouse X") * 5.0f;
+        pitch += Input.GetAxis("Mouse Y") * 5.0f;
+
         if (yaw > 225.0f)
             yaw = 225.0f;
         else if (yaw < 135.0f)
             yaw = 135.0f;
-        
+   
         if (pitch > 45.0f)
             pitch = 45.0f;
         else if (pitch < -30.0f)
@@ -148,6 +156,7 @@ public class Player : MonoBehaviour
                 Rigidbody rig = obj.GetComponent<Rigidbody>();
                 rig.velocity = getBulletdirection() * 500; // - Vector3.forward * 100;
 
+				Variables.scores -= 1;
                 remainBullets--;
                 printRemainBullets(remainBullets);
             }
@@ -157,6 +166,8 @@ public class Player : MonoBehaviour
                 reloadAlert.SetActive(true);
             }
         }
+
+		checkStage (stage);
     }
     
 }
