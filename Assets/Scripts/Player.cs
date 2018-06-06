@@ -119,6 +119,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("adsf");
         //Move Left / Right
         if (transform.position.x < 6 && Input.GetKey(KeyCode.Z))
             transform.position += new Vector3(0.2f, 0.0f, 0.0f);

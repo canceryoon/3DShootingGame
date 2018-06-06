@@ -15,6 +15,7 @@ public class bulletBoom : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
+        Debug.Log(col.gameObject.name);
         Destroy(gameObject);
     }
 }
