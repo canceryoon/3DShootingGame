@@ -10,17 +10,22 @@ public class Player : MonoBehaviour
     CharacterController charCtrl = null;
     float yaw = 181.0f;
     float pitch = 0.0f;
-    int stage = 1;
+    //int stage = 1;
 
     public GameObject[] bullets;
     public GameObject bullet;
     public GameObject reloadAlert;
     public GameObject[] targets;
     public GameObject scope;
+    public GameObject gun;
     public Text stages;
-	public string name;
+    public Text score;
+    public string name;
+
+    Animator ani = null;
 
     private int remainBullets;
+    bool gunScope = true;
 
 	void Awake()
 	{
@@ -34,13 +39,14 @@ public class Player : MonoBehaviour
         remainBullets = 6;
         initTargetFalse();
         initStart();
+        ani = gun.GetComponent<Animator>();
     }
     
     void initStart()
     {
         reloadAlert.SetActive(false);
-        printStage(stage);
-        initStage(stage);
+        printStage(Variables.stage);
+        initStage(Variables.stage);
     }
        
     void printStage(int _stage)
@@ -83,6 +89,7 @@ public class Player : MonoBehaviour
 
     void reloadBullet()
     {
+        Variables.scores -= 5;
         reloadAlert.SetActive(false);
         remainBullets = 6;
 
@@ -100,31 +107,65 @@ public class Player : MonoBehaviour
         }
     }
 
+    
 	void checkStage(int _stage)
 	{
 		if (Variables.targets == (_stage << 2)) 
 		{
-			if (_stage == 3)
-				SceneManager.LoadScene ("GameEndView");
-			else 
-			{
-				stage += 1;
-				printStage (stage);
-				initStage (stage);
-			}
+            if (_stage == 3)
+            {
+                Variables.success = true;
+                SceneManager.LoadScene("GameEndView");
+            }
+            else
+            {
+                Variables.stage += 1;
+                printStage(Variables.stage);
+                initStage(Variables.stage);
+            }
 		}
-			
+		
+        if(Variables.scores <= 0)
+            SceneManager.LoadScene("GameEndView");
 	}
+    
+    void rePrintScore()
+    {
+        score.text = "Score: " + Variables.scores;
+    }
+
+    IEnumerator reboundGun()
+    {
+        ani.Play("rebound");
+        yield return new WaitForSeconds(0.3f);
+        ani.Play("hold");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("adsf");
+        //Mouse right click
+        if (Input.GetMouseButtonDown(1))
+        {
+            if(gunScope)
+            {
+                gun.transform.position += new Vector3(1.202f, 0.37f, 1.27f);
+            }
+            else
+            {
+                gun.transform.position -= new Vector3(1.202f, 0.37f, 1.27f);
+            }
+            gunScope = !gunScope;
+            Debug.Log(gun.transform.position);
+        }
+
+
         //Move Left / Right
         if (transform.position.x < 6 && Input.GetKey(KeyCode.Z))
             transform.position += new Vector3(0.2f, 0.0f, 0.0f);
         if (transform.position.x > -6 && Input.GetKey(KeyCode.X))
             transform.position += new Vector3(-0.2f, 0.0f, 0.0f);
+
 
         //Rotation 
         yaw += Input.GetAxis("Mouse X") * 5.0f;
@@ -142,9 +183,11 @@ public class Player : MonoBehaviour
 
         transform.eulerAngles = new Vector3(pitch * -1, yaw, 0.0f);
 
+
         //Reload Bullet
         if (Input.GetKeyDown(KeyCode.Space))
             reloadBullet();
+
 
         //Shoot
         if (Input.GetMouseButtonDown(0) == true)
@@ -163,12 +206,13 @@ public class Player : MonoBehaviour
             }
 
             if (remainBullets == 0)
-            {
                 reloadAlert.SetActive(true);
-            }
+            
+            StartCoroutine(reboundGun());
         }
 
-		checkStage (stage);
+        rePrintScore();
+        checkStage (Variables.stage);
     }
     
 }

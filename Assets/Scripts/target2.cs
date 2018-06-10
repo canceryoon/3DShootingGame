@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class target2 : MonoBehaviour {
 
-    void OnCollisionEnter(Collision col)
-    {
-        Debug.Log("asfdasf");
-        ani.Play("Take 001");
-    }
-
     Animator ani = null;
+    bool hitting = false;
 
     // Use this for initialization
     void Start () {
@@ -21,4 +16,22 @@ public class target2 : MonoBehaviour {
     void Update () {
 		
 	}
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (!hitting)
+        {
+            hitting = true;
+            Variables.scores += 10;
+            StartCoroutine(endTaret());
+        }
+    }
+
+    IEnumerator endTaret()
+    {
+        ani.Play("hit");
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
+        Variables.targets += 1;
+    }
 }
