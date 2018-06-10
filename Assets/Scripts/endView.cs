@@ -18,6 +18,6 @@ public class endView : MonoBehaviour {
         
         titile.text =(Variables.success)? "Game Clear!" : "Game Over...";
         
-		endMsg.text = Variables.playerName + " score: " + Variables.scores;
+		endMsg.text = "Player " + Variables.playerName + "`s score: " + Variables.scores;
 	}
 }

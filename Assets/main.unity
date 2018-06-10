@@ -3085,6 +3085,10 @@ Prefab:
       propertyPath: m_Name
       value: gun
       objectReference: {fileID: 0}
+    - target: {fileID: 2300058, guid: 0bd50a3df5e0ba94ca1c8c91591d0fa1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 313edc9d628a383488d378bc66f5d76e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0bd50a3df5e0ba94ca1c8c91591d0fa1, type: 3}
   m_IsPrefabParent: 0

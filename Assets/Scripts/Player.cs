@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     CharacterController charCtrl = null;
     float yaw = 181.0f;
     float pitch = 0.0f;
-    //int stage = 1;
 
     public GameObject[] bullets;
     public GameObject bullet;
@@ -30,7 +29,6 @@ public class Player : MonoBehaviour
 	void Awake()
 	{
 		name = Variables.playerName;
-		Debug.Log (name);
 	}
 
     void Start()
@@ -89,6 +87,8 @@ public class Player : MonoBehaviour
 
     void reloadBullet()
     {
+        if (remainBullets == 6)
+            return; 
         Variables.scores -= 5;
         reloadAlert.SetActive(false);
         remainBullets = 6;
@@ -147,16 +147,11 @@ public class Player : MonoBehaviour
         //Mouse right click
         if (Input.GetMouseButtonDown(1))
         {
-            if(gunScope)
-            {
-                gun.transform.position += new Vector3(1.202f, 0.37f, 1.27f);
-            }
-            else
-            {
-                gun.transform.position -= new Vector3(1.202f, 0.37f, 1.27f);
-            }
+            scope.SetActive(!gunScope);
+            gun.transform.localPosition =(gunScope)? 
+                (gun.transform.localPosition - new Vector3(1.18f, -0.37f, 1.0f)) : 
+                (gun.transform.localPosition + new Vector3(1.18f, -0.37f, 1.0f)) ;
             gunScope = !gunScope;
-            Debug.Log(gun.transform.position);
         }
 
 
@@ -173,13 +168,13 @@ public class Player : MonoBehaviour
 
         if (yaw > 225.0f)
             yaw = 225.0f;
-        else if (yaw < 135.0f)
-            yaw = 135.0f;
+        else if (yaw < 120.0f)
+            yaw = 120.0f;
    
         if (pitch > 45.0f)
             pitch = 45.0f;
-        else if (pitch < -30.0f)
-            pitch = -30.0f;
+        else if (pitch < -45.0f)
+            pitch = -45.0f;
 
         transform.eulerAngles = new Vector3(pitch * -1, yaw, 0.0f);
 
