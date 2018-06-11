@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public static class Variables{
 	public static string playerName = "";
@@ -27,7 +29,9 @@ public class startView : MonoBehaviour {
     {
         if (playerName.text == "")
         {
+			#if UNITY_EDITOR
             EditorUtility.DisplayDialog("Warnings: Who are you?", "Please enter your name", "Ok");
+			#endif
             playerName.ActivateInputField();
             //playerName.Select();
         }
